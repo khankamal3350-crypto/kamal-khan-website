@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Kamal Khan Digital Solution | Digital Designer & Website Developer</title>
 <meta name="description" content="Kamal Khan Digital Solution - Professional Website Design, Development, Logo Design, and Digital Solutions in Karachi, Pakistan.">
 <link rel="icon" type="image/png" href="images/kamal-khan-logo-new.png">
@@ -12,20 +15,20 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 /* ============================================================
-   RESET & ROOT VARIABLES — BLUE & WHITE THEME
+   RESET & ROOT VARIABLES — CRIMSON RED & WHITE THEME
 ============================================================ */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 :root {
-  /* Core Blue Palette */
-  --blue-primary:   #0B5ED7;
-  --blue-dark:      #063B8C;
-  --blue-darker:    #042B6B;
-  --blue-medium:    #1A6FE8;
-  --blue-light:     #EAF3FF;
-  --blue-lighter:   #F0F7FF;
-  --blue-accent:    #3B82F6;
-  --blue-soft:      #DBEAFE;
-  --blue-muted:     #93C5FD;
+  /* Core Palette (Crimson Red) */
+  --blue-primary:   #DC2626;
+  --blue-dark:      #7F1D1D;
+  --blue-darker:    #450A0A;
+  --blue-medium:    #EF4444;
+  --blue-light:     #FEF2F2;
+  --blue-lighter:   #FFF5F5;
+  --blue-accent:    #EF4444;
+  --blue-soft:      #FEE2E2;
+  --blue-muted:     #FCA5A5;
 
   /* Neutral Palette */
   --white:          #FFFFFF;
@@ -37,31 +40,31 @@
   --gray-400:       #8AAEC9;
   --gray-500:       #5E84A2;
   --gray-600:       #3D5F7F;
-  --text-main:      #172033;
+  --text-main:      #261414;
   --text-body:      #3A5068;
   --text-muted:     #6B8CAE;
   --text-light:     #94AEC6;
 
-  /* Footer (Dark Blue) */
-  --footer-bg:      #06244F;
-  --footer-mid:     #092D60;
+  /* Footer */
+  --footer-bg:      #260707;
+  --footer-mid:     #3B0D0D;
 
   /* Shadows */
-  --shadow-xs:  0 1px 4px rgba(11, 94, 215, 0.06);
-  --shadow-sm:  0 2px 12px rgba(11, 94, 215, 0.09);
-  --shadow-md:  0 8px 32px rgba(11, 94, 215, 0.13);
-  --shadow-lg:  0 20px 60px rgba(11, 94, 215, 0.16);
-  --shadow-xl:  0 32px 80px rgba(11, 94, 215, 0.2);
-  --shadow-card: 0 4px 24px rgba(11, 94, 215, 0.08);
+  --shadow-xs:  0 1px 4px rgba(220, 38, 38, 0.06);
+  --shadow-sm:  0 2px 12px rgba(220, 38, 38, 0.09);
+  --shadow-md:  0 8px 32px rgba(220, 38, 38, 0.13);
+  --shadow-lg:  0 20px 60px rgba(220, 38, 38, 0.16);
+  --shadow-xl:  0 32px 80px rgba(220, 38, 38, 0.2);
+  --shadow-card: 0 4px 24px rgba(220, 38, 38, 0.08);
 
   /* Border */
-  --border-light: #E2ECF9;
-  --border-blue:  rgba(11, 94, 215, 0.2);
+  --border-light: #FEE2E2;
+  --border-blue:  rgba(220, 38, 38, 0.2);
 
   /* Gradients */
-  --grad-blue:    linear-gradient(135deg, #0B5ED7 0%, #063B8C 100%);
-  --grad-blue-soft: linear-gradient(135deg, #EAF3FF 0%, #F5F8FC 100%);
-  --grad-blue-hero: linear-gradient(135deg, #0B5ED7 0%, #1A6FE8 50%, #063B8C 100%);
+  --grad-blue:    linear-gradient(135deg, #DC2626 0%, #7F1D1D 100%);
+  --grad-blue-soft: linear-gradient(135deg, #FEF2F2 0%, #FFF5F5 100%);
+  --grad-blue-hero: linear-gradient(135deg, #DC2626 0%, #EF4444 50%, #7F1D1D 100%);
 
   /* Radii */
   --r-sm:  8px;
@@ -79,13 +82,23 @@
   --display: 'Playfair Display', serif;
 }
 
-html { scroll-behavior: smooth; font-size: 16px; }
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
 body {
   font-family: var(--font);
   background: var(--white);
   color: var(--text-main);
   overflow-x: hidden;
+  max-width: 100vw;
   line-height: 1.6;
+}
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 ::-webkit-scrollbar { width: 5px; }
@@ -2463,47 +2476,634 @@ footer::before {
 .adm-toast.show { transform: translateY(0); opacity: 1; }
 
 /* ============================================================
-   RESPONSIVE
+   RESPONSIVE DESIGN: COMPUTER, TABLET & MOBILE VIEWPORTS
 ============================================================ */
-@media (max-width: 1024px) {
-  .hero-grid-inner { grid-template-columns: 1fr; gap: 48px; }
-  .hero-visual { display: none; }
-  .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .about-visual { display: none; }
-  .contact-wrapper { grid-template-columns: 1fr; }
-  .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
-  .feat-item { grid-template-columns: 1fr; }
-  .feat-item.alt { direction: ltr; }
-  .adm-stats { grid-template-columns: repeat(2,1fr); }
+
+/* ------------------------------------------------------------
+   1. TABLET VIEWPORT (769px to 1024px - iPad, Tablets)
+------------------------------------------------------------ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 0 24px;
+    max-width: 100%;
+  }
+  .section-pad {
+    padding: 70px 0;
+  }
+
+  /* Hero Tablet: 2-Column Balanced Layout */
+  #hero {
+    min-height: auto;
+    padding: 105px 0 60px;
+  }
+  .hero-grid-inner {
+    display: grid !important;
+    grid-template-columns: 1.1fr 0.9fr !important;
+    gap: 32px !important;
+    align-items: center !important;
+    text-align: left !important;
+  }
+  .hero-left {
+    display: block !important;
+    text-align: left !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .hero-badge {
+    margin: 0 0 16px 0 !important;
+  }
+  .hero-name {
+    font-size: clamp(2.4rem, 4.2vw, 3.2rem) !important;
+    line-height: 1.1 !important;
+    letter-spacing: -1px !important;
+    text-align: left !important;
+    margin-bottom: 10px !important;
+  }
+  .hero-title {
+    font-size: 1.05rem !important;
+    text-align: left !important;
+    margin-bottom: 18px !important;
+  }
+  .hero-desc {
+    font-size: 0.95rem !important;
+    line-height: 1.65 !important;
+    max-width: 100% !important;
+    text-align: left !important;
+    margin-bottom: 28px !important;
+  }
+  .hero-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    justify-content: flex-start !important;
+    max-width: 100% !important;
+    margin-bottom: 32px !important;
+  }
+  .hero-buttons .btn {
+    width: auto !important;
+    padding: 12px 20px !important;
+    font-size: 0.92rem !important;
+  }
+  .hero-stats {
+    display: flex !important;
+    gap: 0 !important;
+    max-width: 100% !important;
+    padding-top: 24px !important;
+    border-top: 1.5px solid var(--border-light) !important;
+  }
+  .hero-stat {
+    flex: 1 !important;
+    border-right: 1.5px solid var(--border-light) !important;
+    border-bottom: none !important;
+    padding: 0 14px !important;
+    text-align: left !important;
+    margin: 0 !important;
+  }
+  .hero-stat:last-child {
+    border-right: none !important;
+  }
+  .hero-stat-num {
+    font-size: 1.8rem !important;
+  }
+  .hero-stat-label {
+    font-size: 0.72rem !important;
+  }
+
+  /* Hero Visual Tablet */
+  .hero-visual {
+    order: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+  .hero-visual-frame {
+    max-width: 350px !important;
+    width: 100% !important;
+  }
+  .profile-card {
+    padding: 26px 20px !important;
+  }
+  .profile-avatar {
+    width: 130px !important;
+    height: 130px !important;
+  }
+  .float-chip {
+    display: flex !important;
+    padding: 8px 12px !important;
+  }
+  .float-chip-1 {
+    top: -10px !important;
+    left: -10px !important;
+  }
+  .float-chip-2 {
+    bottom: -8px !important;
+    right: -10px !important;
+  }
+  .hero-line {
+    width: 48% !important;
+    opacity: 0.65 !important;
+  }
+
+  /* Navigation Tablet */
+  .nav-inner {
+    padding: 0 20px;
+    height: 68px;
+  }
+  .nav-links {
+    gap: 2px;
+  }
+  .nav-links a {
+    padding: 7px 10px;
+    font-size: 0.82rem;
+  }
+
+  /* About Tablet: 2 Columns */
+  .about-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1.2fr !important;
+    gap: 36px !important;
+    text-align: left !important;
+  }
+  .about-visual {
+    order: 0 !important;
+    display: flex !important;
+    max-width: 100% !important;
+  }
+  .about-right {
+    text-align: left !important;
+    align-items: flex-start !important;
+  }
+  .about-stats {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 100% !important;
+    gap: 14px !important;
+  }
+  .about-skills-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 100% !important;
+    gap: 12px !important;
+  }
+
+  /* Grids Tablet: 2 Columns */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 22px !important;
+  }
+  .pf-browser-screen, .pf-preview {
+    height: 270px !important;
+    --screen-h: 270px !important;
+  }
+  .plans-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 100% !important;
+    gap: 22px !important;
+  }
+  .plans-trust-bar {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 18px !important;
+  }
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+  .contact-wrapper {
+    grid-template-columns: 1fr 1.2fr !important;
+    gap: 28px !important;
+  }
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 32px !important;
+  }
 }
+
+/* ------------------------------------------------------------
+   2. MOBILE VIEWPORT (< 768px - Phones / Mobile Devices)
+------------------------------------------------------------ */
 @media (max-width: 768px) {
-  .section-pad { padding: 70px 0; }
-  .nav-links, .nav-actions { display: none; }
-  .hamburger { display: flex; }
-  .about-stats { grid-template-columns: repeat(2,1fr); }
-  .about-skills-grid { grid-template-columns: repeat(2,1fr); }
-  .footer-top { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; text-align: center; }
-  .form-row { grid-template-columns: 1fr; }
-  .feat-item { padding: 28px; }
-  .adm-sidebar { width: 220px; }
-  .adm-main { padding: 24px 20px; }
-  .adm-grid-2 { grid-template-columns: 1fr; }
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw;
+  }
+  .container {
+    padding: 0 16px;
+    max-width: 100%;
+  }
+  .section-pad {
+    padding: 55px 0;
+  }
+  .sec-header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .sec-title {
+    font-size: 1.85rem;
+    line-height: 1.2;
+  }
+  .sec-desc {
+    margin: 0 auto;
+    font-size: 0.92rem;
+  }
+
+  /* Hide background line, dots and floating admin on mobile */
+  .hero-line, .hero-line::before, .hero-dots, .hero-dots-2,
+  .hero-shape, .hero-shape-1, .hero-shape-2, .hero-shape-3 {
+    display: none !important;
+  }
+  .admin-float-btn {
+    display: none !important;
+  }
+  .float-chip {
+    display: none !important;
+  }
+
+  /* Nav Mobile */
+  .nav-links, .nav-actions {
+    display: none !important;
+  }
+  .hamburger {
+    display: flex !important;
+  }
+  .nav-inner {
+    height: 60px;
+    padding: 0 16px;
+  }
+  .nav-logo-name {
+    font-size: 0.95rem;
+  }
+  .nav-logo-sub {
+    font-size: 0.55rem;
+  }
+  .nav-logo-img {
+    width: 38px;
+    height: 38px;
+  }
+  .mobile-nav {
+    gap: 20px;
+    padding: 40px 20px;
+  }
+  .mobile-nav a {
+    font-size: 1.6rem;
+  }
+
+  /* Hero Mobile: Clean Vertical Layout with Photo at Top */
+  #hero {
+    min-height: auto;
+    padding: 85px 0 45px;
+  }
+  .hero-grid-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 22px !important;
+  }
+
+  /* Photo & Avatar Card on top */
+  .hero-visual {
+    order: -1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+  .hero-visual-frame {
+    max-width: 290px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+  .profile-card {
+    padding: 22px 18px 18px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 28px rgba(11, 94, 215, 0.12) !important;
+  }
+  .profile-avatar {
+    width: 110px !important;
+    height: 110px !important;
+    margin: 0 auto 12px !important;
+  }
+  .profile-name {
+    font-size: 1.2rem !important;
+  }
+  .profile-role {
+    font-size: 0.78rem !important;
+  }
+  .profile-tags {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 4px !important;
+  }
+  .profile-tag {
+    font-size: 0.65rem !important;
+    padding: 3px 8px !important;
+  }
+  .profile-rating {
+    justify-content: center !important;
+    font-size: 0.76rem !important;
+  }
+
+  /* Text & Actions under photo */
+  .hero-left {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+  .hero-badge {
+    margin: 0 auto 12px !important;
+    font-size: 0.75rem !important;
+  }
+  .hero-name {
+    text-align: center !important;
+    font-size: clamp(2rem, 8vw, 2.8rem) !important;
+    line-height: 1.1 !important;
+    letter-spacing: -1px !important;
+    margin-bottom: 8px !important;
+  }
+  .hero-name .blue-line {
+    display: inline !important;
+  }
+  .hero-title {
+    text-align: center !important;
+    font-size: 1rem !important;
+    margin-bottom: 14px !important;
+  }
+  .hero-desc {
+    text-align: center !important;
+    font-size: 0.92rem !important;
+    line-height: 1.6 !important;
+    max-width: 100% !important;
+    margin: 0 auto 22px !important;
+  }
+  .hero-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto 24px !important;
+    gap: 12px !important;
+  }
+  .hero-buttons .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 13px 20px !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* Compact 3-Column Horizontal Stats Bar */
+  .hero-stats {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    margin: 0 auto !important;
+    padding: 18px 0 0 !important;
+    border-top: 1.5px solid var(--border-light) !important;
+    gap: 6px !important;
+    text-align: center !important;
+  }
+  .hero-stat {
+    border-right: none !important;
+    border-bottom: none !important;
+    padding: 0 4px !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+  .hero-stat-num {
+    font-size: 1.55rem !important;
+    font-weight: 800 !important;
+  }
+  .hero-stat-label {
+    font-size: 0.65rem !important;
+    line-height: 1.2 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  /* About Mobile: Vertical */
+  .about-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 32px !important;
+  }
+  .about-visual {
+    display: flex !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+    max-width: 290px !important;
+    width: 100% !important;
+  }
+  .about-img-box {
+    max-width: 270px !important;
+    aspect-ratio: 1/1 !important;
+    border-radius: 20px !important;
+    margin: 0 auto !important;
+  }
+  .about-exp-badge {
+    bottom: 8px !important;
+    right: 8px !important;
+    padding: 10px 14px !important;
+    border-radius: 12px !important;
+  }
+  .about-exp-num {
+    font-size: 1.5rem !important;
+  }
+  .about-exp-label {
+    font-size: 0.62rem !important;
+  }
+  .about-right {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .about-stats {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    margin: 0 auto 24px !important;
+  }
+  .about-skills-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    margin: 0 auto 24px !important;
+  }
+
+  /* All Grids: 1 Column Vertical on Mobile */
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .service-card {
+    padding: 22px 18px !important;
+    border-radius: 16px !important;
+  }
+  .portfolio-filter {
+    gap: 8px !important;
+    margin-bottom: 24px !important;
+    justify-content: center !important;
+  }
+  .pf-btn {
+    padding: 7px 14px !important;
+    font-size: 0.78rem !important;
+  }
+  .portfolio-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .pf-card {
+    max-width: 400px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    border-radius: 18px !important;
+  }
+  .pf-browser-screen, .pf-preview {
+    height: 230px !important;
+    --screen-h: 230px !important;
+  }
+  .pf-card-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+  .pf-card-actions .btn,
+  .pf-card-actions a,
+  .pf-card-actions button {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  .plans-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 380px !important;
+    margin: 0 auto 30px !important;
+    gap: 20px !important;
+  }
+  .plans-trust-bar {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    padding: 16px !important;
+    text-align: center !important;
+  }
+  .why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .contact-wrapper {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+  }
+  .contact-info, .contact-form-box {
+    padding: 22px 16px !important;
+    border-radius: 18px !important;
+  }
+  .contact-quick-btns {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+  .wa-btn, .call-btn, .loc-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 12px 18px !important;
+  }
+  .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .footer-top {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    text-align: center !important;
+  }
+  .footer-col {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .foot-social {
+    justify-content: center !important;
+  }
+  .footer-bottom {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 10px !important;
+  }
+
+  .adm-sidebar { display: none !important; }
+  .adm-main { padding: 18px 14px !important; }
+  .adm-grid-2 { grid-template-columns: 1fr !important; }
+  .feat-item { grid-template-columns: 1fr !important; }
+  .feat-item.alt { direction: ltr !important; }
 }
+
+/* ------------------------------------------------------------
+   3. SMALL MOBILE PHONES (< 480px)
+------------------------------------------------------------ */
 @media (max-width: 480px) {
-  .container { padding: 0 16px; }
-  .section-pad { padding: 56px 0; }
-  .about-stats { grid-template-columns: repeat(2,1fr); }
-  .hero-stats { flex-direction: column; gap: 16px; }
-  .hero-stat { border-right: none; border-bottom: 1.5px solid var(--border-light); padding: 0 0 16px; margin: 0 0 16px; }
-  .hero-stat:last-child { border-bottom: none; }
-  .contact-info, .contact-form-box { padding: 28px 22px; }
-  .adm-sidebar { display: none; }
-  .adm-main { padding: 20px 16px; }
-  .portfolio-grid { grid-template-columns: 1fr; }
-  .tools-grid { grid-template-columns: repeat(2,1fr); }
-  .services-grid { grid-template-columns: 1fr; }
-  .nav-actions { display: none; }
+  .container {
+    padding: 0 14px;
+  }
+  .section-pad {
+    padding: 44px 0;
+  }
+  .sec-title {
+    font-size: 1.6rem;
+  }
+  .hero-visual-frame {
+    max-width: 250px !important;
+  }
+  .profile-avatar {
+    width: 95px !important;
+    height: 95px !important;
+  }
+  .hero-name {
+    font-size: 1.95rem !important;
+  }
+  .hero-stats {
+    max-width: 320px !important;
+    gap: 4px !important;
+  }
+  .hero-stat-num {
+    font-size: 1.35rem !important;
+  }
+  .hero-stat-label {
+    font-size: 0.58rem !important;
+  }
+  .pf-browser-screen, .pf-preview {
+    height: 195px !important;
+    --screen-h: 195px !important;
+  }
+  .about-stats {
+    grid-template-columns: 1fr !important;
+  }
+  .about-skills-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .tools-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* ============================================================
@@ -3367,6 +3967,7 @@ body.cursor-active .cursor-ring {
   <a href="#portfolio" onclick="closeMobile()">Portfolio</a>
   <a href="#plans" onclick="closeMobile()">Plans</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="javascript:void(0)" onclick="closeMobile(); openAdmin();" style="font-size:1.05rem;opacity:0.6;margin-top:10px;"><i class="fas fa-lock"></i> Admin Panel</a>
 </div>
 
 <!-- ============================================================
@@ -4540,22 +5141,22 @@ body.cursor-active .cursor-ring {
           <div class="adm-section-title"><i class="fas fa-palette"></i> Custom Brand Colors (Live Updates)</div>
           <div class="color-pickers" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;">
             <div class="cp-item">
-              <input type="color" id="cfg_color_primary" value="#0B5ED7" onchange="onColorInput(this,'--blue-primary')">
+              <input type="color" id="cfg_color_primary" value="#DC2626" onchange="onColorInput(this,'--blue-primary')">
               <label>Primary Color</label>
-              <input type="text" id="cfg_color_primary_hex" value="#0B5ED7" class="adm-input-field" style="text-align:center;padding:6px;font-size:0.8rem;margin-bottom:0;" oninput="onHexInput(this,'cfg_color_primary','--blue-primary')">
+              <input type="text" id="cfg_color_primary_hex" value="#DC2626" class="adm-input-field" style="text-align:center;padding:6px;font-size:0.8rem;margin-bottom:0;" oninput="onHexInput(this,'cfg_color_primary','--blue-primary')">
             </div>
             <div class="cp-item">
-              <input type="color" id="cfg_color_dark" value="#063B8C" onchange="onColorInput(this,'--blue-dark')">
+              <input type="color" id="cfg_color_dark" value="#7F1D1D" onchange="onColorInput(this,'--blue-dark')">
               <label>Dark Primary</label>
-              <input type="text" id="cfg_color_dark_hex" value="#063B8C" class="adm-input-field" style="text-align:center;padding:6px;font-size:0.8rem;margin-bottom:0;" oninput="onHexInput(this,'cfg_color_dark','--blue-dark')">
+              <input type="text" id="cfg_color_dark_hex" value="#7F1D1D" class="adm-input-field" style="text-align:center;padding:6px;font-size:0.8rem;margin-bottom:0;" oninput="onHexInput(this,'cfg_color_dark','--blue-dark')">
             </div>
             <div class="cp-item">
-              <input type="color" id="cfg_color_accent" value="#3B82F6" onchange="onColorInput(this,'--blue-accent')">
+              <input type="color" id="cfg_color_accent" value="#EF4444" onchange="onColorInput(this,'--blue-accent')">
               <label>Accent Color</label>
-              <input type="text" id="cfg_color_accent_hex" value="#3B82F6" class="adm-input-field" style="text-align:center;padding:6px;font-size:0.8rem;margin-bottom:0;" oninput="onHexInput(this,'cfg_color_accent','--blue-accent')">
+              <input type="text" id="cfg_color_accent_hex" value="#EF4444" class="adm-input-field" style="text-align:center;padding:6px;font-size:0.8rem;margin-bottom:0;" oninput="onHexInput(this,'cfg_color_accent','--blue-accent')">
             </div>
             <div class="cp-item">
-              <input type="color" id="cfg_color_light" value="#EAF3FF" onchange="onColorInput(this,'--blue-light')">
+              <input type="color" id="cfg_color_light" value="#FEF2F2" onchange="onColorInput(this,'--blue-light')">
               <label>Light Tint / BG</label>
               <input type="text" id="cfg_color_light_hex" value="#EAF3FF" class="adm-input-field" style="text-align:center;padding:6px;font-size:0.8rem;margin-bottom:0;" oninput="onHexInput(this,'cfg_color_light','--blue-light')">
             </div>
@@ -5187,13 +5788,13 @@ function handleForm(e) {
    ADMIN PORTAL & CMS CONTROLLER (FULL ENGINE)
 ============================================================ */
 const defaultSiteConfig = {
-  // Colors
-  color_primary: "#0B5ED7",
-  color_dark: "#063B8C",
-  color_accent: "#3B82F6",
-  color_light: "#EAF3FF",
-  color_text: "#172033",
-  color_footer: "#06244F",
+  // Colors (Crimson Red matching user theme)
+  color_primary: "#DC2626",
+  color_dark: "#7F1D1D",
+  color_accent: "#EF4444",
+  color_light: "#FEF2F2",
+  color_text: "#261414",
+  color_footer: "#260707",
   font_heading: "'Playfair Display', serif",
   font_body: "'Inter', sans-serif",
 
